@@ -1,0 +1,9 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true
+  }
+}

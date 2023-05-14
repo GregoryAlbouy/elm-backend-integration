@@ -1,13 +1,9 @@
 import server from "fastify";
 
-import { Elm } from "./elm.js"; // not found? run `npm run build:elm`
+import { Elm } from "./Main.elm";
 
-const initElm = (
-  environment = "development"
-): ElmApp<{
-  pingReceiver: PortToElm<null>;
-  sendPong: PortFromElm<number>;
-}> => Elm.Main.init({ flags: { environment } });
+const initElm = (environment = "development") =>
+  Elm.Main.init({ flags: { environment } });
 
 const elmApp = initElm(process.env.NODE_ENV);
 const store = { count: 0 };

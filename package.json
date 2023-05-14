@@ -1,9 +1,7 @@
 {
   "scripts": {
-    "build": "npm run build:elm && npm run build:js",
-    "build:elm": "elm-esm make src/Main.elm --output=src/elm.js --debug",
-    "build:js": "rm -r ./dist/* && tsc",
-    "start": "npm run build && node ./dist/app.js"
+    "build": "ts-node --project ./script/tsconfig.json ./script/build.ts",
+    "start": "NODE_ENV=production npm run build && node dist/app.js"
   },
   "dependencies": {
     "fastify": "^4.0.0"
@@ -12,8 +10,10 @@
     "@types/elm": "^0.19.1",
     "@types/node": "^20.1.4",
     "elm": "^0.19.1-5",
-    "elm-esm": "^1.1.4",
     "elm-test": "^0.19.1-revision12",
+    "esbuild": "^0.17.19",
+    "esbuild-plugin-elm": "^0.0.12",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   }
 }
