@@ -1,0 +1,7 @@
+# Dist files
+dist
+src/elm.js
+
+# Deps
+elm-stuff
+node_modules

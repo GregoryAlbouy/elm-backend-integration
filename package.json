@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "build": "npm run build:elm && npm run build:js",
+    "build:elm": "elm-esm make src/Main.elm --output=src/elm.js --debug",
+    "build:js": "rm -r ./dist/* && tsc",
+    "start": "npm run build && node ./dist/app.js"
+  },
+  "dependencies": {
+    "fastify": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/elm": "^0.19.1",
+    "@types/node": "^20.1.4",
+    "elm": "^0.19.1-5",
+    "elm-esm": "^1.1.4",
+    "elm-test": "^0.19.1-revision12",
+    "fastify-cli": "^5.7.1",
+    "typescript": "^5.0.4"
+  }
+}
