@@ -12,6 +12,7 @@ See `package.json` scripts for more details about the build process.
 
 ```sh
 npm i
+npm run build:elm # Generate elm.js file that is imported from app.ts
 ```
 
 ### Run server
