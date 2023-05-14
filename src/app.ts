@@ -1,6 +1,6 @@
 import fastify from "fastify";
 
-import { Elm } from "./elm.js";
+import { Elm } from "./elm.js"; // not found? run `npm run build:elm`
 
 type MyElmApp = ElmApp<{
   pingReceiver: PortToElm<null>;
