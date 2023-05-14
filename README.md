@@ -4,7 +4,7 @@ Example of an Elm app integration into a Fastify server written in TypeScript.
 
 It demonstrates how to:
 
-- Instanciate a headless Elm app using `Platform.worker` to be used
+- Instantiate a headless Elm app using `Platform.worker` to be used
   in any context
 - Communicate with an Elm app using flags, incoming ports and outcoming ports
 - Properly type an Elm app from TypeScript's perspective
