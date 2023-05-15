@@ -48,28 +48,37 @@ initModel environment =
     }
 
 
-addPing : Model -> Model
-addPing model =
-    { model | pingCount = model.pingCount + 1 }
-
-
 
 -- Update
 
 
 type Msg
-    = ReceivedPing ()
-    | SendPong Int
+    = ReceivedPing
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ReceivedPing _ ->
-            ( model |> addPing, sendPong (model.pingCount + 1) )
+        ReceivedPing ->
+            let
+                _ =
+                    heavyComputation 1000000
 
-        SendPong n ->
-            ( model, sendPong n )
+                n =
+                    model.pingCount + 1
+            in
+            ( { model | pingCount = n }, sendPong n )
+
+
+heavyComputation : Int -> Int
+heavyComputation n =
+    List.range 0 n
+        |> List.reverse
+        |> List.map ((//) 3)
+        |> List.reverse
+        |> List.map ((+) 3)
+        |> List.reverse
+        |> List.sum
 
 
 
@@ -78,4 +87,4 @@ update msg model =
 
 subscriptions : Model -> Sub Msg
 subscriptions _ =
-    pingReceiver ReceivedPing
+    pingReceiver (\() -> ReceivedPing)
