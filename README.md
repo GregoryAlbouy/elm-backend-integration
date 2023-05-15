@@ -18,8 +18,9 @@ that imports the Elm build:
 import { Elm } from "./elm.js"; // not found? run `npm run build:elm`
 ```
 
-See branch
-[`bundler-alternative`](https://github.com/GregoryAlbouy/elm-backend-integration/tree/bundler-alternative) (#1)
+➡️ See branch
+[`bundler-alternative`](https://github.com/gregoryalbouy/elm-backend-integration/tree/bundler-alternative)
+(https://github.com/gregoryalbouy/elm-backend-integration/pull/1)
 for a single-step build alternative, leveraging a bundler (`esbuild`) to allow
 direct imports from Elm source files:
 
@@ -29,12 +30,18 @@ import { Elm } from "./Main.elm";
 
 ## JS interoperability
 
-Elm's `ports` system does not allow to just call a function and expect
-a return value. However it can be worked around using with a simple
-encapsulation on the server side.
+Elm's `ports` system is event-oriented and does not allow to just call
+a function and expect a return value:
 
-See branch
-[`as-function`](https://github.com/GregoryAlbouy/elm-backend-integration/tree/as-function) (#2)
+```ts
+elmApp.ports.pingReceiver.send(null); // void
+```
+
+However it can be worked around using with a simple encapsulation.
+
+➡️ See branch
+[`as-function`](https://github.com/gregoryalbouy/elm-backend-integration/tree/as-function)
+(https://github.com/gregoryalbouy/elm-backend-integration/pull/2)
 for a working example:
 
 ```ts
