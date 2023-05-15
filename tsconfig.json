@@ -9,5 +9,5 @@
     "skipLibCheck": true,
     "allowJs": true
   },
-  "include": ["src/**/*", "dist/elm.js"]
+  "include": ["src"]
 }
