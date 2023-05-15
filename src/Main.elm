@@ -28,7 +28,7 @@ main =
 
 init : Flags -> ( Model, Cmd Msg )
 init { environment } =
-    ( initModel (Debug.log "Elm environment" environment), Cmd.none )
+    ( initModel environment, Cmd.none )
 
 
 

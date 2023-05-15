@@ -1,6 +1,5 @@
 # Dist files
 dist
-src/elm.js
 
 # Deps
 elm-stuff
