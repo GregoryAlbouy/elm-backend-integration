@@ -11,6 +11,22 @@ It demonstrates how to:
 
 See `package.json` scripts for more details about the build process.
 
+Note: the build is divided in two steps, first Elm build then TypeScript build
+that imports the Elm build:
+
+```js
+import { Elm } from "./elm.js"; // not found? run `npm run build:elm`
+```
+
+See branch
+[`bundler-alternative`](https://github.com/GregoryAlbouy/elm-backend-integration/tree/bundler-alternative)
+for a single-step build alternative, leveraging a bundler (`esbuild`) to allow
+direct imports from Elm source files:
+
+```ts
+import { Elm } from "./Main.elm";
+```
+
 ## Development
 
 ### Install dependencies
