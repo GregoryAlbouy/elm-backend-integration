@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "ts-node --project ./script/tsconfig.json ./script/build.ts",
-    "start": "NODE_ENV=production npm run build && node dist/app.js"
+    "start": "NODE_ENV=production npm run build && node dist/app.js",
+    "dev": "NODE_ENV=development npm run build"
   },
   "dependencies": {
     "fastify": "^4.0.0"

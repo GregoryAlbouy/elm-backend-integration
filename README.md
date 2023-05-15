@@ -57,8 +57,14 @@ npm i
 npm run build:elm # Generate elm.js file that is imported from app.ts
 ```
 
-### Run server
+### Run server (production)
 
 ```sh
 npm run start
+```
+
+### Run server in watch mode (development)
+
+```sh
+npm run dev
 ```
